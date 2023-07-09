@@ -1,5 +1,14 @@
-// Weather data for different cities in Karachi
+// Weather data for different cities in Pakistan
 const weatherData = [
+    // Punjab
+    {
+        city: "Punjab",
+        temperature: "30°C",
+        description: "Partly Cloudy",
+        humidity: "65%",
+        windSpeed: "12 km/h"
+    },
+    // Karachi
     {
         city: "Karachi",
         temperature: "32°C",
@@ -7,19 +16,37 @@ const weatherData = [
         humidity: "60%",
         windSpeed: "10 km/h"
     },
+    // Lahore
     {
         city: "Lahore",
-        temperature: "30°C",
-        description: "Partly Cloudy",
-        humidity: "65%",
-        windSpeed: "12 km/h"
-    },
-    {
-        city: "Islamabad",
         temperature: "28°C",
         description: "Cloudy",
         humidity: "70%",
         windSpeed: "15 km/h"
+    },
+    // Balochistan
+    {
+        city: "Quetta",
+        temperature: "25°C",
+        description: "Sunny",
+        humidity: "55%",
+        windSpeed: "8 km/h"
+    },
+    // KPK
+    {
+        city: "Peshawar",
+        temperature: "27°C",
+        description: "Clear",
+        humidity: "62%",
+        windSpeed: "10 km/h"
+    },
+    // Islamabad
+    {
+        city: "Islamabad",
+        temperature: "26°C",
+        description: "Partly Cloudy",
+        humidity: "68%",
+        windSpeed: "13 km/h"
     }
 ];
 
@@ -32,11 +59,11 @@ function displayWeather(city) {
     const humidityElement = document.getElementById("humidity");
     const windSpeedElement = document.getElementById("wind-speed");
 
-    // Find the weather data for the specified city in Karachi
+    // Find the weather data for the specified city
     const weatherInfo = weatherData.find(weather => weather.city.toLowerCase() === city.toLowerCase());
 
     if (weatherInfo) {
-        locationElement.textContent = weatherInfo.city;
+        locationElement.textContent = city;
         temperatureElement.textContent = "Temperature: " + weatherInfo.temperature;
         descriptionElement.textContent = "Description: " + weatherInfo.description;
         humidityElement.textContent = "Humidity: " + weatherInfo.humidity;
